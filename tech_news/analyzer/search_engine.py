@@ -22,7 +22,7 @@ def search_by_date(date_searched):
         return tuple_list
 
     except Exception:
-        raise ValueError('Data inválida')   
+        raise ValueError("Data inválida")
 
 
 # Requisito 8
