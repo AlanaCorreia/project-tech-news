@@ -27,9 +27,17 @@ def search_by_date(date_searched):
 
 # Requisito 8
 def search_by_tag(tag):
-    """Seu código deve vir aqui"""
+    list_news = search_news({"tags": {"$regex": tag, "$options": "i"}})
+    tuple_list = [(new["title"], new["url"]) for new in list_news]
+
+    return tuple_list
 
 
 # Requisito 9
 def search_by_category(category):
-    """Seu código deve vir aqui"""
+    list_news = search_news(
+        {"category": {"$regex": category, "$options": "i"}}
+    )
+    tuple_list = [(new["title"], new["url"]) for new in list_news]
+
+    return tuple_list
